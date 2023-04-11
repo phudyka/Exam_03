@@ -2,7 +2,7 @@
 #define GET_NEXT_LINE_H
 
 #ifndef BUFFER_SIZE
-#ifndef BUFFER_SIZE 42
+#define BUFFER_SIZE 5
 #endif
 
 # include <unistd.h>
