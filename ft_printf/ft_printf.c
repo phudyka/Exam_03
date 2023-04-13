@@ -1,14 +1,13 @@
 #include <stdio.h>
 #include <unistd.h>
-#include <stdlib.h>
 #include <stdarg.h>
 
-int ft_printstr(char *str)
+int	ft_printstr(char *str)
 {
 	int i = 0;
 
 	if (!str)
-		return(write(1, "(null)", 6));
+		return(write(1, "(null)", 1));
 	while (str[i])
 	{
 		write(1, &str[i], 1);
@@ -17,7 +16,7 @@ int ft_printstr(char *str)
 	return (i);
 }
 
-int	ft_printnbr(long long int nbr, int base)
+void	ft_printnbr(long long int nbr, int base)
 {
 	int		len = 0;
 	char	*hex = "0123456789abcdef";
@@ -29,14 +28,13 @@ int	ft_printnbr(long long int nbr, int base)
 	}
 	if (nbr >= base)
 		len += ft_printnbr((nbr / base), base);
-	len += write(1, &hex[nbr % base], 1);
-	return (len);
+	len += write(1, hex[nbr % base], 1);
 }
 
 int	ft_printf(const char *format, ...)
 {
 	int i = 0;
-	int len = 0;
+	len = 0;
 	va_list	arg;
 	
 	va_start(arg, format);
