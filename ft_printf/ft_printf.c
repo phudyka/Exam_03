@@ -34,7 +34,7 @@ int	ft_printnbr(long long int nbr, int base)
 
 int	ft_printf(const char *format, ...)
 {
-	int i = 0;
+	int	i = 0;
 	int	len = 0;
 	va_list	arg;
 	
