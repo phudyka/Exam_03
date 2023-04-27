@@ -29,6 +29,7 @@ int	ft_printnbr(long long int nbr, int base)
 	if (nbr >= base)
 		len += ft_printnbr((nbr / base), base);
 	len += write(1, hex[nbr % base], 1);
+	return (len);
 }
 
 int	ft_printf(const char *format, ...)
