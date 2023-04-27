@@ -7,7 +7,7 @@ int	ft_printstr(char *str)
 	int i = 0;
 
 	if (!str)
-		return(write(1, "(null)", 1));
+		return(write(1, "(null)", 6));
 	while (str[i])
 	{
 		write(1, &str[i], 1);
@@ -16,7 +16,7 @@ int	ft_printstr(char *str)
 	return (i);
 }
 
-void	ft_printnbr(long long int nbr, int base)
+int	ft_printnbr(long long int nbr, int base)
 {
 	int		len = 0;
 	char	*hex = "0123456789abcdef";
@@ -34,7 +34,7 @@ void	ft_printnbr(long long int nbr, int base)
 int	ft_printf(const char *format, ...)
 {
 	int i = 0;
-	len = 0;
+	int	len = 0;
 	va_list	arg;
 	
 	va_start(arg, format);
